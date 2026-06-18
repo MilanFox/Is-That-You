@@ -52,3 +52,9 @@ PBKDF2-derived key is kept in local storage.
 - The stored key can still generate codes (it has to, since there's no server). Not storing the passphrase means the
   original phrase can't be recovered, not that a stolen device is harmless. For at-rest protection, add a device
   lock/PIN.
+
+## Screenshots
+
+<div align="center">
+  <img src="assets/mockup.png" alt width="1000">
+</div>

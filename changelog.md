@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.2 (docs)
+
+Add Screenshots to README
+
 ## v1.0.1 (chore)
 
 Improve readability and maintainability:  
