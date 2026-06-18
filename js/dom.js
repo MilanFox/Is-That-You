@@ -1,0 +1,23 @@
+export const dom = {
+  /* DASHBOARD */
+  dashboard: document.getElementById('dashboard'),
+  validity: document.getElementById('validity'),
+  timeRemaining: document.getElementById('timeRemaining'),
+  validityBarFill: document.getElementById('validityBarFill'),
+  instruction: document.getElementById('instruction'),
+  appVersion: document.getElementById('appVersion'),
+  addBtn: document.getElementById('addBtn'),
+  emptyAdd: document.getElementById('emptyAdd'),
+  uiLang: document.getElementById('uiLang'),
+  /* FORM */
+  add: document.getElementById('add'),
+  groupName: document.getElementById('groupName'),
+  groupPassword: document.getElementById('groupPassword'),
+  showPassword: document.getElementById('showPassword'),
+  passwordStrength: document.getElementById('passwordStrength'),
+  formError: document.getElementById('formError'),
+  save: document.getElementById('save'),
+  cancel: document.getElementById('cancel'),
+  strengthText: document.querySelector('#passwordStrength .form__strength-text'),
+  langButtons: document.querySelectorAll('#add [data-lang]'),
+};

@@ -26,7 +26,7 @@
   "httpsSub": "Please open the page over <b>HTTPS</b> - otherwise the encryption won't work.",
   "switchLang": "Current language: English. Switch to German.",
   "tagline": "What's the codeword?",
-  "sShort": "Short - a longer passphrase is safer.",
-  "sOk": "Okay. Several words are safer.",
-  "sStrong": "Strong."
+  "pwShort": "Short - a longer passphrase is safer.",
+  "pwOk": "Okay. Several words are safer.",
+  "pwStrong": "Strong."
 }
