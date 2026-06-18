@@ -38,6 +38,8 @@ export const showDashboard = () => {
   dom.dashboard.hidden = false;
 };
 
+export const isFormVisible = () => !dom.add.hidden;
+
 export const showAdd = () => {
   dom.groupName.value = '';
   dom.groupPassword.value = '';
@@ -52,6 +54,9 @@ export const showAdd = () => {
   dom.dashboard.hidden = true;
   dom.add.hidden = false;
   dom.groupName.focus();
+  if (history.state?.view !== 'add') {
+    history.pushState({ view: 'add' }, '');
+  }
 };
 
 export const renderAndFill = () => {
@@ -77,7 +82,8 @@ export const save = async () => {
     const name = dom.groupName.value.trim() || 'Codewort';
     groups.push({ id: uid(), name, lang: addLang, key: toHex(keyBytes), keyBytes, wordEl: null });
     persist();
-    showDashboard();
+    if (history.state?.view === 'add') history.back();
+    else showDashboard();
     renderAndFill();
     announce(t('codewordAdded'));
   } catch (e) {

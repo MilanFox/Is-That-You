@@ -4,7 +4,7 @@ import { normalize } from './js/crypto.js';
 import { dom } from './js/dom.js';
 import { load, groups } from './js/state.js';
 import { startTicker } from './js/timer.js';
-import { renderAndFill, renderStrength, showAdd, showDashboard, save, setAddLangButtons, setAddLang } from './js/form.js';
+import { renderAndFill, renderStrength, showAdd, showDashboard, isFormVisible, save, setAddLangButtons, setAddLang } from './js/form.js';
 import { VERSION } from './version.js';
 
 const apply = (lang) => applyLang(lang, { renderStrength, renderAndFill });
@@ -23,9 +23,17 @@ const init = async () => {
     document.getElementById('boot')?.remove();
   }
 
+  window.addEventListener('popstate', (e) => {
+    if (e.state?.view === 'add') showAdd();
+    else if (isFormVisible()) showDashboard();
+  });
+
   dom.addBtn.addEventListener('click', showAdd);
   dom.emptyAdd.addEventListener('click', showAdd);
-  dom.cancel.addEventListener('click', showDashboard);
+  dom.cancel.addEventListener('click', () => {
+    if (history.state?.view === 'add') history.back();
+    else showDashboard();
+  });
 
   dom.uiLang.addEventListener('click', () => apply(uiLang === 'de' ? 'en' : 'de'));
 
