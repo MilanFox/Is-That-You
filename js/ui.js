@@ -18,6 +18,7 @@ export const renderCards = (groups, translate, onDelete) => {
   const listEl = document.getElementById('list');
   const emptyEl = document.getElementById('empty');
   const validityEl = document.getElementById('validity');
+  const lostPassEl = document.getElementById('lostPass');
 
   listEl.innerHTML = '';
 
@@ -25,12 +26,14 @@ export const renderCards = (groups, translate, onDelete) => {
     emptyEl.hidden = false;
     listEl.hidden = true;
     validityEl.hidden = true;
+    if (lostPassEl) lostPassEl.hidden = true;
     return;
   }
 
   emptyEl.hidden = true;
   listEl.hidden = false;
   validityEl.hidden = false;
+  if (lostPassEl) lostPassEl.hidden = false;
 
   groups.forEach((group) => {
     const card = document.createElement('li');
@@ -89,7 +92,52 @@ export const renderCards = (groups, translate, onDelete) => {
     no.addEventListener('click', () => { confirm.hidden = true; });
     yes.addEventListener('click', () => onDelete(group.id));
 
-    card.append(header, word, confirm);
+    if (group.hint) {
+      const hintRow = document.createElement('div');
+      hintRow.className = 'card__hint-row';
+
+      const hintBoxId = `hint-box-${group.id}`;
+
+      const hintBtn = document.createElement('button');
+      hintBtn.className = 'card__hint-btn';
+      hintBtn.type = 'button';
+      hintBtn.textContent = translate('showHint');
+      hintBtn.setAttribute('aria-expanded', 'false');
+      hintBtn.setAttribute('aria-controls', hintBoxId);
+
+      const hintBox = document.createElement('div');
+      hintBox.className = 'card__hint-box';
+      hintBox.hidden = true;
+      hintBox.id = hintBoxId;
+
+      const hintTitle = document.createElement('span');
+      hintTitle.className = 'card__hint-title';
+      hintTitle.textContent = translate('hintTitle') + ': ';
+
+      const hintText = document.createElement('span');
+      hintText.className = 'card__hint-text';
+      hintText.textContent = group.hint;
+
+      hintBox.append(hintTitle, hintText);
+
+      hintBtn.addEventListener('click', () => {
+        const isHidden = hintBox.hidden;
+        hintBox.hidden = !isHidden;
+        hintBtn.setAttribute('aria-expanded', String(isHidden));
+        hintBtn.textContent = isHidden ? translate('hideHint') : translate('showHint');
+        if (isHidden) {
+          hintBtn.setAttribute('aria-description', group.hint);
+        } else {
+          hintBtn.removeAttribute('aria-description');
+        }
+      });
+
+      hintRow.append(hintBtn, hintBox);
+      card.append(header, word, hintRow, confirm);
+    } else {
+      card.append(header, word, confirm);
+    }
+
     listEl.append(card);
   });
 };

@@ -1,6 +1,6 @@
 {
   "appName": "Is that you?",
-  "instruction": "Let the caller say the word <b>first</b> - then check it here.",
+  "instruction": "Let the other person say the word <b>first</b> - then check it here.",
   "validLabel": "New codewords in",
   "codewordUpdated": "Codeword updated",
   "codewordAdded": "New codeword added",
@@ -28,5 +28,19 @@
   "tagline": "What's the codeword?",
   "pwShort": "Short - a longer passphrase is safer.",
   "pwOk": "Okay. Several words are safer.",
-  "pwStrong": "Strong."
+  "pwStrong": "Strong.",
+  "hintLabel": "Passphrase hint (optional)",
+  "hintPh": "e.g. the name of our cat",
+  "hintNote": "Make it something only you would understand — not obvious to a stranger.",
+  "showHint": "Show hint",
+  "hideHint": "Hide hint",
+  "hintTitle": "Hint",
+  "lostPassTitle": "Did they say they lost access to their app?",
+  "lostPassNoPassNeeded": "That's fine — they just need to re-add the codeword on their device. They can open this same website or app, tap \"Add codeword\", and enter the shared passphrase again. No need to share anything with them.",
+  "lostPassForgotTitle": "Do they also say they forgot the passphrase?",
+  "lostPassBody": "That is more unusual. Be careful. A real family member or friend should know the passphrase.",
+  "lostPassHowTo": "If you still want to help: tap the <b>\"Show hint\"</b> button on the codeword card below. Read only the hint out loud — nothing else.",
+  "lostPassWarning": "Do not share the passphrase itself.",
+  "lostPassUncertain": "If you feel uncertain at any point, get another family member involved.",
+  "lostPassUrgency": "They might say it's super urgent - it's always worth the 2 minutes to involve another person."
 }

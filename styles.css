@@ -238,7 +238,7 @@ input:focus-visible {
 /* ─── Validity strip ──────────────────────────── */
 
 .validity {
-  margin-bottom: 20px;
+  margin-block: 20px;
 }
 
 .validity__stamp {
@@ -248,7 +248,7 @@ input:focus-visible {
   padding: 6px 12px;
   background: var(--green-soft);
   border-radius: var(--r-sm);
-  margin-bottom: 10px;
+  margin-top: 12px;
 }
 
 .validity--warn .validity__stamp {
@@ -679,6 +679,144 @@ input:focus-visible {
 .footer__name:hover,
 .footer__changelog:hover {
   text-decoration: underline;
+}
+
+/* ─── Lost passphrase warning ────────────────── */
+
+.lost-pass {
+  background: var(--warn-soft);
+  border: 1px solid var(--warn);
+  border-radius: var(--r);
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.lost-pass__summary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--warn);
+  line-height: 1.3;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.lost-pass__summary::-webkit-details-marker {
+  display: none;
+}
+
+.lost-pass__summary::before {
+  content: '⚠' / '';
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+.lost-pass__summary::after {
+  content: '›' / '';
+  margin-left: auto;
+  font-size: 1.2rem;
+  line-height: 1;
+  transition: transform .2s ease;
+  color: var(--warn);
+}
+
+.lost-pass[open] .lost-pass__summary::after {
+  transform: rotate(90deg);
+}
+
+.lost-pass__body,
+.lost-pass__how-to,
+.lost-pass__warning {
+  margin: 0 0 6px;
+  padding: 0 16px;
+  font-size: .9rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.lost-pass__body {
+  padding-top: 4px;
+}
+
+.lost-pass__forgot-title {
+  margin: 10px 0 4px;
+  padding: 0 16px;
+  font-size: .9rem;
+  font-weight: 700;
+  color: var(--warn);
+  line-height: 1.4;
+}
+
+.lost-pass__warning {
+  margin-bottom: 0;
+  font-weight: 700;
+  color: var(--warn);
+}
+
+.lost-pass__uncertain,
+.lost-pass__urgency {
+  margin: 0 0 6px;
+  padding: 0 16px;
+  font-size: .9rem;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.lost-pass__urgency {
+  padding-bottom: 14px;
+  margin-bottom: 0;
+}
+
+/* ─── Card hint ──────────────────────────────── */
+
+.card__hint-row {
+  padding-top: 12px;
+}
+
+.card__hint-btn {
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: var(--r-xs);
+  padding: 5px 12px;
+  font-size: .8rem;
+  color: var(--muted);
+  cursor: pointer;
+  font-family: var(--sans);
+}
+
+.card__hint-btn:hover {
+  color: var(--ink);
+  border-color: var(--muted);
+}
+
+.card__hint-box {
+  margin-top: 8px;
+  background: var(--blue-soft);
+  border-radius: var(--r-xs);
+  padding: 8px 12px;
+  font-size: .875rem;
+  line-height: 1.5;
+}
+
+.card__hint-title {
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.card__hint-text {
+  color: var(--ink);
+}
+
+/* ─── Form hint note ─────────────────────────── */
+
+.form__note--hint {
+  margin-top: 6px;
+  font-size: .8rem;
+  color: var(--muted);
 }
 
 /* ─── Boot spinner ───────────────────────────── */

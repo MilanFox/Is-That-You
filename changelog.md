@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.0 (feat)
+
+Add "Hint" System for lost Keyphrase
+
 ## v1.0.3 (feat)
 
 Browser back button / PWA back gesture closes the form and returns to the home screen

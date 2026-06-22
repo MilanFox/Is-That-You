@@ -6,7 +6,7 @@ export const uid = () => Date.now().toString(36) + Math.random().toString(36).sl
 export const groups = [];
 
 export const persist = () => store.set('codewords',
-  JSON.stringify(groups.map(({ id, name, lang, key }) => ({ id, name, lang, key }))));
+  JSON.stringify(groups.map(({ id, name, lang, key, hint }) => ({ id, name, lang, key, hint: hint || '' }))));
 
 export const load = () => {
   groups.length = 0;
@@ -21,6 +21,7 @@ export const load = () => {
           lang: group.lang,
           key: group.key,
           keyBytes: fromHex(group.key),
+          hint: group.hint || '',
           wordEl: null,
         });
       }

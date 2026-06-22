@@ -43,6 +43,7 @@ export const isFormVisible = () => !dom.add.hidden;
 export const showAdd = () => {
   dom.groupName.value = '';
   dom.groupPassword.value = '';
+  dom.groupHint.value = '';
   dom.groupPassword.type = 'password';
   dom.showPassword.checked = false;
   renderStrength('');
@@ -80,7 +81,8 @@ export const save = async () => {
   try {
     const keyBytes = await deriveKey(pass);
     const name = dom.groupName.value.trim() || 'Codewort';
-    groups.push({ id: uid(), name, lang: addLang, key: toHex(keyBytes), keyBytes, wordEl: null });
+    const hint = dom.groupHint.value.trim();
+    groups.push({ id: uid(), name, lang: addLang, key: toHex(keyBytes), keyBytes, hint, wordEl: null });
     persist();
     if (history.state?.view === 'add') history.back();
     else showDashboard();

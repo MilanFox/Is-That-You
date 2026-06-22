@@ -44,15 +44,16 @@
 
     <p id="instruction" class="instruction" data-i18n-html="instruction"></p>
 
-    <div id="validity" class="validity" hidden>
-      <div class="validity__stamp" role="timer" aria-atomic="true">
-        <span class="validity__stamp-label" data-i18n="validLabel"></span>
-        <b id="timeRemaining" class="validity__stamp-time">5:00</b>
-      </div>
-      <div class="validity__bar" aria-hidden="true">
-        <span id="validityBarFill" class="validity__bar-fill"></span>
-      </div>
-    </div>
+    <details id="lostPass" class="lost-pass" hidden>
+      <summary class="lost-pass__summary" data-i18n="lostPassTitle"></summary>
+      <p class="lost-pass__body" data-i18n="lostPassNoPassNeeded"></p>
+      <p class="lost-pass__forgot-title" data-i18n="lostPassForgotTitle"></p>
+      <p class="lost-pass__body" data-i18n="lostPassBody"></p>
+      <p class="lost-pass__how-to" data-i18n-html="lostPassHowTo"></p>
+      <p class="lost-pass__warning" data-i18n="lostPassWarning"></p>
+      <p class="lost-pass__uncertain" data-i18n="lostPassUncertain"></p>
+      <p class="lost-pass__urgency" data-i18n-html="lostPassUrgency"></p>
+    </details>
 
     <ul id="list" class="card-list"></ul>
 
@@ -66,6 +67,16 @@
       <h2 class="empty-state__title" data-i18n="emptyTitle"></h2>
       <p class="empty-state__body" data-i18n="emptyBody"></p>
       <button id="emptyAdd" class="btn--primary" type="button" data-i18n="add"></button>
+    </div>
+
+    <div id="validity" class="validity" hidden>
+      <div class="validity__bar" aria-hidden="true">
+        <span id="validityBarFill" class="validity__bar-fill"></span>
+      </div>
+      <div class="validity__stamp" role="timer" aria-atomic="true">
+        <span class="validity__stamp-label" data-i18n="validLabel"></span>
+        <b id="timeRemaining" class="validity__stamp-time">5:00</b>
+      </div>
     </div>
 
     <footer class="footer">
@@ -110,6 +121,13 @@
         </div>
         <span class="form__strength-text"></span>
       </div>
+    </div>
+
+    <div class="form__field">
+      <label class="form__label" for="groupHint" data-i18n="hintLabel"></label>
+      <input id="groupHint" class="form__input" type="text" autocomplete="off"
+             data-i18n-ph="hintPh">
+      <p class="form__note form__note--hint" data-i18n="hintNote"></p>
     </div>
 
     <div class="lang-seg" role="group" data-i18n-aria="codewordLangLabel">

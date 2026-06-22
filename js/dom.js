@@ -9,9 +9,11 @@ export const dom = {
   addBtn: document.getElementById('addBtn'),
   emptyAdd: document.getElementById('emptyAdd'),
   uiLang: document.getElementById('uiLang'),
+  lostPass: document.getElementById('lostPass'),
   /* FORM */
   add: document.getElementById('add'),
   groupName: document.getElementById('groupName'),
+  groupHint: document.getElementById('groupHint'),
   groupPassword: document.getElementById('groupPassword'),
   showPassword: document.getElementById('showPassword'),
   passwordStrength: document.getElementById('passwordStrength'),

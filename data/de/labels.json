@@ -1,6 +1,6 @@
 {
   "appName": "Bist du das?",
-  "instruction": "Lass den Anrufer das Wort <b>zuerst</b> sagen - dann hier vergleichen.",
+  "instruction": "Lass die andere Person das Wort <b>zuerst</b> sagen - dann hier vergleichen.",
   "validLabel": "Neue Codewörter in",
   "codewordUpdated": "Codewort aktualisiert",
   "codewordAdded": "Neues Codewort hinzugefügt",
@@ -28,5 +28,19 @@
   "tagline": "Was ist das Codewort?",
   "pwShort": "Kurz - eine längere Passphrase ist sicherer.",
   "pwOk": "Okay. Mehrere Wörter sind sicherer.",
-  "pwStrong": "Stark."
+  "pwStrong": "Stark.",
+  "hintLabel": "Hinweis zur Passphrase (optional)",
+  "hintPh": "z. B. der Name unserer Katze",
+  "hintNote": "Nur etwas, das du selbst verstehst - kein offensichtlicher Hinweis für Fremde.",
+  "showHint": "Hinweis anzeigen",
+  "hideHint": "Hinweis verbergen",
+  "hintTitle": "Hinweis",
+  "lostPassTitle": "Hat die andere Person gesagt, sie hat keinen Zugang mehr zur App?",
+  "lostPassNoPassNeeded": "Das ist kein Problem - sie muss das Codewort einfach neu auf ihrem Gerät hinzufügen. Sie kann dieselbe Website oder App öffnen, auf \"Codewort hinzufügen\" tippen und die gemeinsame Passphrase erneut eingeben. Du musst ihr dafür nichts mitteilen.",
+  "lostPassForgotTitle": "Sagt sie, sie hat auch die Passphrase vergessen?",
+  "lostPassBody": "Das ist ungewöhnlicher. Sei vorsichtig. Ein echtes Familienmitglied oder ein Freund sollte die Passphrase noch kennen, ihr habt sie schließlich gemeinsam festgelegt.",
+  "lostPassHowTo": "Wenn du trotzdem helfen möchtest: Tippe auf den <b>\"Hinweis anzeigen\"</b>-Knopf auf der Codewort-Karte unten. Lies nur den Hinweis laut vor - nichts weiter.",
+  "lostPassWarning": "Gib die tatsächliche Passphrase selbst niemals heraus.",
+  "lostPassUncertain": "Ansonsten ist diese App unwirksam. Wenn du dir irgendwann unsicher bist, hol ein weiteres Familienmitglied dazu.",
+  "lostPassUrgency": "Vielleicht sagt dein Gegenüber, es sei extrem dringend - es lohnt sich <b>immer</b>, 2 Minuten zu investieren und eine weitere Person einzubeziehen."
 }
