@@ -99,52 +99,56 @@
     <h2 class="form__title" data-i18n="addTitle"></h2>
 
     <form id="addForm">
-    <div class="form__field">
-      <label class="form__label" for="groupName" data-i18n="nameLabel"></label>
-      <input id="groupName" class="form__input" type="text" autocomplete="off"
-             data-i18n-ph="namePh" required>
-    </div>
-
-    <div class="form__field">
-      <label class="form__label" for="groupPassword" data-i18n="passLabel"></label>
-      <input id="groupPassword" class="form__input" type="password" inputmode="text"
-             autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
-             data-i18n-ph="passPh" required>
-      <label class="form__show-toggle">
-        <input type="checkbox" id="showPassword">
-        <span data-i18n="showPass"></span>
-      </label>
-      <div class="form__strength" id="passwordStrength" data-level="" aria-live="polite">
-        <div class="form__strength-bar" aria-hidden="true">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <span class="form__strength-text"></span>
+      <div class="form__field">
+        <label class="form__label" for="groupName" data-i18n="nameLabel"></label>
+        <input id="groupName" class="form__input" type="text" autocomplete="off"
+               data-i18n-ph="namePh" required>
       </div>
-    </div>
 
-    <div class="form__field">
-      <label class="form__label" for="groupHint" data-i18n="hintLabel"></label>
-      <input id="groupHint" class="form__input" type="text" autocomplete="off"
-             data-i18n-ph="hintPh" aria-describedby="hintNote">
-      <p id="hintNote" class="form__note form__note--hint" data-i18n="hintNote" aria-hidden="true"></p>
-    </div>
+      <fieldset class="form__field form__show-fieldset">
+        <legend class="sr-only" data-i18n="showPassLegend"></legend>
+        <label class="form__label" for="groupPassword" data-i18n="passLabel"></label>
+        <input id="groupPassword" class="form__input" type="password" inputmode="text"
+               autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
+               data-i18n-ph="passPh" required>
 
-    <p id="langSegLabel" class="form__label" data-i18n="codewordLangLabel"></p>
-    <div class="lang-seg" role="group" aria-labelledby="langSegLabel">
-      <label class="lang-seg__option">
-        <input type="radio" name="codewordLang" value="de" class="sr-only" checked>
-        Deutsch
-      </label>
-      <label class="lang-seg__option">
-        <input type="radio" name="codewordLang" value="en" class="sr-only">
-        English
-      </label>
-    </div>
+        <label class="form__show-toggle">
+          <input type="checkbox" id="showPassword">
+          <span data-i18n="showPass"></span>
+        </label>
+        <div class="form__strength" id="passwordStrength" data-level="" aria-live="polite">
+          <div class="form__strength-bar" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <span class="form__strength-text"></span>
+        </div>
+      </fieldset>
 
-    <button id="save" class="btn--primary" type="submit" data-i18n="save"></button>
-    <p class="form__note" data-i18n="addNote"></p>
+      <div class="form__field">
+        <label class="form__label" for="groupHint" data-i18n="hintLabel"></label>
+        <input id="groupHint" class="form__input" type="text" autocomplete="off"
+               data-i18n-ph="hintPh" aria-describedby="hintNote">
+        <p id="hintNote" class="form__note form__note--hint" data-i18n="hintNote" aria-hidden="true"></p>
+      </div>
+
+      <fieldset class="lang-seg__fieldset">
+        <legend class="form__label" data-i18n="codewordLangLabel"></legend>
+        <div class="lang-seg">
+          <label class="lang-seg__option">
+            <input type="radio" name="codewordLang" value="de" class="sr-only" checked>
+            Deutsch
+          </label>
+          <label class="lang-seg__option">
+            <input type="radio" name="codewordLang" value="en" class="sr-only">
+            English
+          </label>
+        </div>
+      </fieldset>
+
+      <button id="save" class="btn--primary" type="submit" data-i18n="save"></button>
+      <p class="form__note" data-i18n="addNote"></p>
     </form>
   </section>
 </main>

@@ -14,6 +14,7 @@
   "passLabel": "Gemeinsame Passphrase",
   "passPh": "z. B. drei zufällige Wörter",
   "showPass": "Passphrase anzeigen",
+  "showPassLegend": "Passphrase",
   "codewordLangLabel": "Sprache der Codewörter",
   "save": "Hinzufügen",
   "addNote": "Die Passphrase selbst wird nicht gespeichert - nur ein daraus abgeleiteter Schlüssel. Der Name ist nur auf diesem Gerät.",

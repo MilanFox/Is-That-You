@@ -14,6 +14,7 @@
   "passLabel": "Shared passphrase",
   "passPh": "e.g. three random words",
   "showPass": "Show passphrase",
+  "showPassLegend": "Passphrase",
   "codewordLangLabel": "Codeword language",
   "save": "Add",
   "addNote": "The passphrase itself is not stored - only a key derived from it. The name stays on this device.",

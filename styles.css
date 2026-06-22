@@ -13,16 +13,16 @@ body {
   --bg: #F0EEE9;
   --surface: #FAFAF7;
   --ink: #232630;
-  --muted: #6B7380;
+  --muted: #4A5260;
   --line: #DDD9D1;
-  --blue: #5285BE;
+  --blue: #2E6CA8;
   --blue-soft: #EBF0F8;
   --meter-ok: #2E6CA8;
   --green: #2A7430;
   --green-soft: #E8F3EA;
   --warn: #9A5A00;
   --warn-soft: #FEF3E2;
-  --validity-label: #5E6470;
+  --validity-label: #4A5260;
   --danger: #B83030;
   --r: 0.75rem;
   --r-sm: 0.625rem;
@@ -86,6 +86,14 @@ input:focus-visible {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
   white-space: nowrap;
+}
+
+.form__show-fieldset,
+.lang-seg__fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+  min-width: 0;
 }
 
 

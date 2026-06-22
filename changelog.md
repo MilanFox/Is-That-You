@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.1.3 (fix)
+
+Fix contrast of blue accent color in light mode
+Refactor form fieldsets for better semantics
+
+## v1.1.2 (fix)
+
+Add accessible colors for light mode
+
 ## v1.1.1 (feat)
 
 A11y & UX improvements in "Add new Keyword" Form
