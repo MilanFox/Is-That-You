@@ -605,25 +605,6 @@ input:focus-visible {
   line-height: 1.65;
 }
 
-.form__error {
-  margin-top: 14px;
-  color: var(--danger);
-  background: #fef2f2;
-  border: 1px solid #fecaca;
-  border-radius: var(--r-sm);
-  padding: 11px 13px;
-  font-size: .87rem;
-  line-height: 1.5;
-}
-
-@media (prefers-color-scheme: dark) {
-  .form__error {
-    background: #2C1818;
-    border-color: #4A2424;
-  }
-}
-
-
 /* ─── Language segment ────────────────────────── */
 
 .lang-seg {

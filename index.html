@@ -98,17 +98,18 @@
 
     <h2 class="form__title" data-i18n="addTitle"></h2>
 
+    <form id="addForm">
     <div class="form__field">
       <label class="form__label" for="groupName" data-i18n="nameLabel"></label>
       <input id="groupName" class="form__input" type="text" autocomplete="off"
-             data-i18n-ph="namePh">
+             data-i18n-ph="namePh" required>
     </div>
 
     <div class="form__field">
       <label class="form__label" for="groupPassword" data-i18n="passLabel"></label>
       <input id="groupPassword" class="form__input" type="password" inputmode="text"
              autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"
-             data-i18n-ph="passPh">
+             data-i18n-ph="passPh" required>
       <label class="form__show-toggle">
         <input type="checkbox" id="showPassword">
         <span data-i18n="showPass"></span>
@@ -126,18 +127,25 @@
     <div class="form__field">
       <label class="form__label" for="groupHint" data-i18n="hintLabel"></label>
       <input id="groupHint" class="form__input" type="text" autocomplete="off"
-             data-i18n-ph="hintPh">
-      <p class="form__note form__note--hint" data-i18n="hintNote"></p>
+             data-i18n-ph="hintPh" aria-describedby="hintNote">
+      <p id="hintNote" class="form__note form__note--hint" data-i18n="hintNote" aria-hidden="true"></p>
     </div>
 
-    <div class="lang-seg" role="group" data-i18n-aria="codewordLangLabel">
-      <button type="button" class="lang-seg__option" data-lang="de">Deutsch</button>
-      <button type="button" class="lang-seg__option" data-lang="en">English</button>
+    <p id="langSegLabel" class="form__label" data-i18n="codewordLangLabel"></p>
+    <div class="lang-seg" role="group" aria-labelledby="langSegLabel">
+      <label class="lang-seg__option">
+        <input type="radio" name="codewordLang" value="de" class="sr-only" checked>
+        Deutsch
+      </label>
+      <label class="lang-seg__option">
+        <input type="radio" name="codewordLang" value="en" class="sr-only">
+        English
+      </label>
     </div>
 
-    <button id="save" class="btn--primary" type="button" data-i18n="save" disabled></button>
-    <div class="form__error" id="formError" hidden></div>
+    <button id="save" class="btn--primary" type="submit" data-i18n="save"></button>
     <p class="form__note" data-i18n="addNote"></p>
+    </form>
   </section>
 </main>
 

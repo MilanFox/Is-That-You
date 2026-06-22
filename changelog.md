@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.1.1 (feat)
+
+A11y & UX improvements in "Add new Keyword" Form
+
 ## v1.1.0 (feat)
 
 Add "Hint" System for lost Keyphrase

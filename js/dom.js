@@ -17,9 +17,9 @@ export const dom = {
   groupPassword: document.getElementById('groupPassword'),
   showPassword: document.getElementById('showPassword'),
   passwordStrength: document.getElementById('passwordStrength'),
-  formError: document.getElementById('formError'),
   save: document.getElementById('save'),
   cancel: document.getElementById('cancel'),
   strengthText: document.querySelector('#passwordStrength .form__strength-text'),
-  langButtons: document.querySelectorAll('#add [data-lang]'),
+  addForm: document.getElementById('addForm'),
+  langRadios: document.querySelectorAll('#addForm [name="codewordLang"]'),
 };

@@ -42,20 +42,14 @@ const init = async () => {
   });
 
   dom.groupPassword.addEventListener('input', (e) => {
-    const val = normalize(e.target.value);
-    renderStrength(val);
-    dom.save.disabled = val.length === 0;
+    renderStrength(normalize(e.target.value));
   });
 
-  dom.groupPassword.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' && !dom.save.disabled) save();
-  });
+  dom.addForm.addEventListener('submit', save);
 
-  dom.save.addEventListener('click', save);
-
-  dom.langButtons.forEach((button) => {
-    button.addEventListener('click', () => {
-      setAddLang(button.dataset.lang);
+  dom.langRadios.forEach((radio) => {
+    radio.addEventListener('change', () => {
+      setAddLang(radio.value);
       setAddLangButtons();
     });
   });

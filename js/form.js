@@ -1,6 +1,6 @@
 import { dom } from './dom.js';
-import { t } from './i18n.js';
-import { normalize, deriveKey, toHex } from './crypto.js';
+import { t, uiLang } from './i18n.js';
+import { deriveKey, toHex } from './crypto.js';
 import { groups, uid, persist, deleteGroup } from './state.js';
 import { renderCards, refreshWords } from './ui.js';
 import { announce } from './a11y.js';
@@ -25,10 +25,9 @@ export const renderStrength = (passphrase) => {
 };
 
 export const setAddLangButtons = () => {
-  dom.langButtons.forEach((button) => {
-    const on = button.dataset.lang === addLang;
-    button.classList.toggle('lang-seg__option--active', on);
-    button.setAttribute('aria-pressed', on ? 'true' : 'false');
+  dom.langRadios.forEach((radio) => {
+    radio.checked = radio.value === addLang;
+    radio.closest('.lang-seg__option').classList.toggle('lang-seg__option--active', radio.checked);
   });
 };
 
@@ -47,10 +46,8 @@ export const showAdd = () => {
   dom.groupPassword.type = 'password';
   dom.showPassword.checked = false;
   renderStrength('');
-  dom.formError.hidden = true;
-  addLang = 'de';
+  addLang = uiLang;
   setAddLangButtons();
-  dom.save.disabled = true;
   dom.save.textContent = t('save');
   dom.dashboard.hidden = true;
   dom.add.hidden = false;
@@ -65,17 +62,18 @@ export const renderAndFill = () => {
   if (groups.length) refreshWords(groups, currentWindowIndex());
 };
 
-export const save = async () => {
+export const save = async (e) => {
+  if (e) e.preventDefault();
   const pass = dom.groupPassword.value;
-  if (!normalize(pass)) return;
 
   if (!hasCrypto()) {
-    dom.formError.textContent = t('errCrypto');
-    dom.formError.hidden = false;
+    announce(t('errCrypto'), { assertive: true });
     return;
   }
 
-  dom.formError.hidden = true;
+  const checkedRadio = [...dom.langRadios].find((r) => r.checked);
+  addLang = checkedRadio ? checkedRadio.value : uiLang;
+
   dom.save.disabled = true;
 
   try {
@@ -89,8 +87,7 @@ export const save = async () => {
     renderAndFill();
     announce(t('codewordAdded'));
   } catch (e) {
-    dom.formError.textContent = t('errAdd');
-    dom.formError.hidden = false;
+    announce(t('errAdd'), { assertive: true });
     dom.save.disabled = false;
   }
 };
